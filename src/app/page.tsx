@@ -65,7 +65,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/shop"
-                className="px-8 py-3.5 bg-[#C6A77B] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#A8865A] transition-colors duration-300"
+                className="px-8 py-3.5 bg-teal text-white text-xs tracking-[0.15em] uppercase hover:bg-teal-dark transition-colors duration-300"
               >
                 Shop
               </Link>
@@ -130,7 +130,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="w-8 h-px bg-accent mx-auto mb-6" />
+                <div className="w-8 h-px bg-teal mx-auto mb-6" />
                 <h3 className="font-serif text-xl font-light mb-3">{prop.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{prop.description}</p>
               </motion.div>

@@ -35,7 +35,7 @@ export default function EmailCapture() {
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
         required
-        className="flex-1 px-4 py-3 bg-transparent border border-border text-sm text-[#2A2A2A] placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+        className="flex-1 px-4 py-3 bg-transparent border border-border text-sm text-[#2A2A2A] placeholder:text-muted focus:outline-none focus:border-teal transition-colors"
       />
       <input
         type="email"
@@ -43,11 +43,11 @@ export default function EmailCapture() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="flex-1 px-4 py-3 bg-transparent border border-border text-sm text-[#2A2A2A] placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
+        className="flex-1 px-4 py-3 bg-transparent border border-border text-sm text-[#2A2A2A] placeholder:text-muted focus:outline-none focus:border-teal transition-colors"
       />
       <button
         type="submit"
-        className="px-8 py-3 bg-[#C6A77B] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#A8865A] transition-colors duration-300"
+        className="px-8 py-3 bg-teal text-white text-xs tracking-[0.15em] uppercase hover:bg-teal-dark transition-colors duration-300"
       >
         Join
       </button>

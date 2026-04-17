@@ -96,7 +96,7 @@ export default function ScrollPopup({ triggerRef }: Props) {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     required
-                    className="px-4 py-3 bg-transparent border border-[#E7E1D8] text-sm text-[#2A2A2A] placeholder:text-[#7A7A7A] focus:outline-none focus:border-[#C6A77B] transition-colors"
+                    className="px-4 py-3 bg-transparent border border-[#E7E1D8] text-sm text-[#2A2A2A] placeholder:text-[#7A7A7A] focus:outline-none focus:border-[#3D9E8E] transition-colors"
                   />
                   <input
                     type="email"
@@ -104,11 +104,11 @@ export default function ScrollPopup({ triggerRef }: Props) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="px-4 py-3 bg-transparent border border-[#E7E1D8] text-sm text-[#2A2A2A] placeholder:text-[#7A7A7A] focus:outline-none focus:border-[#C6A77B] transition-colors"
+                    className="px-4 py-3 bg-transparent border border-[#E7E1D8] text-sm text-[#2A2A2A] placeholder:text-[#7A7A7A] focus:outline-none focus:border-[#3D9E8E] transition-colors"
                   />
                   <button
                     type="submit"
-                    className="mt-1 py-3.5 bg-[#C6A77B] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#A8865A] transition-colors duration-300"
+                    className="mt-1 py-3.5 bg-[#3D9E8E] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#2E7D70] transition-colors duration-300"
                   >
                     Join
                   </button>

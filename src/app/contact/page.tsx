@@ -46,7 +46,7 @@ function ContactForm() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 bg-transparent border border-border text-sm text-[#2A2A2A] placeholder:text-muted focus:outline-none focus:border-accent transition-colors";
+    "w-full px-4 py-3 bg-transparent border border-border text-sm text-[#2A2A2A] placeholder:text-muted focus:outline-none focus:border-teal transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="max-w-lg">
@@ -106,7 +106,7 @@ function ContactForm() {
       </div>
       <button
         type="submit"
-        className="px-10 py-3.5 bg-[#C6A77B] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#A8865A] transition-colors duration-300"
+        className="px-10 py-3.5 bg-teal text-white text-xs tracking-[0.15em] uppercase hover:bg-teal-dark transition-colors duration-300"
       >
         Send Message
       </button>

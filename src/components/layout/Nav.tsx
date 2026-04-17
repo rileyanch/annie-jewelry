@@ -16,7 +16,7 @@ export default function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl font-light tracking-[0.15em] text-[#1A1A1A]">
+        <Link href="/" className="font-serif text-xl font-light tracking-[0.15em] text-[#2A2A2A]">
           ANNIE
         </Link>
 
@@ -25,7 +25,7 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs tracking-[0.15em] uppercase text-muted hover:text-[#1A1A1A] transition-colors duration-300"
+              className="text-xs tracking-[0.15em] uppercase text-muted hover:text-[#2A2A2A] transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -33,7 +33,7 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="text-muted hover:text-[#1A1A1A] transition-colors" aria-label="Search">
+          <button className="text-muted hover:text-[#2A2A2A] transition-colors" aria-label="Search">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
@@ -41,7 +41,7 @@ export default function Nav() {
           </button>
 
           <button
-            className="md:hidden text-muted hover:text-[#1A1A1A] transition-colors"
+            className="md:hidden text-muted hover:text-[#2A2A2A] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >
@@ -73,7 +73,7 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-xs tracking-[0.15em] uppercase text-muted hover:text-[#1A1A1A] transition-colors"
+                  className="text-xs tracking-[0.15em] uppercase text-muted hover:text-[#2A2A2A] transition-colors"
                 >
                   {link.label}
                 </Link>

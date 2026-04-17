@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs tracking-[0.15em] uppercase text-[#1A1A1A] mb-5">Explore</p>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#2A2A2A] mb-5">Explore</p>
             <div className="flex flex-col gap-3">
               {[
                 { href: "/shop", label: "Shop" },
@@ -24,7 +24,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xs text-muted hover:text-[#1A1A1A] transition-colors tracking-wide"
+                  className="text-xs text-muted hover:text-[#2A2A2A] transition-colors tracking-wide"
                 >
                   {link.label}
                 </Link>
@@ -33,12 +33,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs tracking-[0.15em] uppercase text-[#1A1A1A] mb-5">Contact</p>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#2A2A2A] mb-5">Contact</p>
             <div className="flex flex-col gap-3">
-              <Link href="/contact" className="text-xs text-muted hover:text-[#1A1A1A] transition-colors tracking-wide">
+              <Link href="/contact?type=request" className="text-xs text-muted hover:text-[#2A2A2A] transition-colors tracking-wide">
                 Request a piece
               </Link>
-              <Link href="/contact" className="text-xs text-muted hover:text-[#1A1A1A] transition-colors tracking-wide">
+              <Link href="/contact?type=inquiry" className="text-xs text-muted hover:text-[#2A2A2A] transition-colors tracking-wide">
                 Ask Annie
               </Link>
             </div>

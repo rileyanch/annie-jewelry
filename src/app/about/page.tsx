@@ -57,7 +57,7 @@ export default function AboutPage() {
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-block px-8 py-3.5 bg-[#1A1A1A] text-white text-xs tracking-[0.15em] uppercase hover:bg-accent transition-colors duration-300"
+                className="inline-block px-8 py-3.5 bg-[#C6A77B] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#A8865A] transition-colors duration-300"
               >
                 Get in touch
               </Link>

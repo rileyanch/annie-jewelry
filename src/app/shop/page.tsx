@@ -1,13 +1,36 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import ProductCard from "@/components/ui/ProductCard";
 import { products, categories } from "@/data/products";
 
 type CategoryFilter = "all" | "rings" | "necklaces" | "earrings" | "bracelets" | "gifts";
 
-export default function ShopPage() {
-  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
+const validCategories: CategoryFilter[] = ["all", "rings", "necklaces", "earrings", "bracelets", "gifts"];
+
+function ShopPage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const paramCategory = searchParams.get("category") as CategoryFilter | null;
+  const initial = paramCategory && validCategories.includes(paramCategory) ? paramCategory : "all";
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>(initial);
+
+  useEffect(() => {
+    const cat = searchParams.get("category") as CategoryFilter | null;
+    setActiveCategory(cat && validCategories.includes(cat) ? cat : "all");
+  }, [searchParams]);
+
+  const handleCategory = (cat: CategoryFilter) => {
+    setActiveCategory(cat);
+    const params = new URLSearchParams(searchParams.toString());
+    if (cat === "all") {
+      params.delete("category");
+    } else {
+      params.set("category", cat);
+    }
+    router.replace(`/shop?${params.toString()}`);
+  };
 
   const filtered =
     activeCategory === "all"
@@ -31,11 +54,11 @@ export default function ShopPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex gap-0 overflow-x-auto">
             <button
-              onClick={() => setActiveCategory("all")}
+              onClick={() => handleCategory("all")}
               className={`px-6 py-4 text-xs tracking-[0.15em] uppercase whitespace-nowrap border-b-2 transition-colors ${
                 activeCategory === "all"
-                  ? "border-[#1A1A1A] text-[#1A1A1A]"
-                  : "border-transparent text-muted hover:text-[#1A1A1A]"
+                  ? "border-[#2A2A2A] text-[#2A2A2A]"
+                  : "border-transparent text-muted hover:text-[#2A2A2A]"
               }`}
             >
               All
@@ -43,11 +66,11 @@ export default function ShopPage() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActiveCategory(cat.id as CategoryFilter)}
+                onClick={() => handleCategory(cat.id as CategoryFilter)}
                 className={`px-6 py-4 text-xs tracking-[0.15em] uppercase whitespace-nowrap border-b-2 transition-colors ${
                   activeCategory === cat.id
-                    ? "border-[#1A1A1A] text-[#1A1A1A]"
-                    : "border-transparent text-muted hover:text-[#1A1A1A]"
+                    ? "border-[#2A2A2A] text-[#2A2A2A]"
+                    : "border-transparent text-muted hover:text-[#2A2A2A]"
                 }`}
               >
                 {cat.label}
@@ -74,5 +97,13 @@ export default function ShopPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ShopPageWrapper() {
+  return (
+    <Suspense>
+      <ShopPage />
+    </Suspense>
   );
 }

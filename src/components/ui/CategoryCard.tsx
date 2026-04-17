@@ -28,7 +28,7 @@ export default function CategoryCard({ id, label, image }: CategoryCardProps) {
           />
           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
         </div>
-        <p className="text-xs tracking-[0.15em] uppercase text-center text-[#1A1A1A]">{label}</p>
+        <p className="text-xs tracking-[0.15em] uppercase text-center text-[#2A2A2A]">{label}</p>
       </Link>
     </motion.div>
   );

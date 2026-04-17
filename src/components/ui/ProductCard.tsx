@@ -24,7 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
         <div>
           <p className="text-xs tracking-[0.12em] uppercase text-muted mb-1">{product.category}</p>
-          <h3 className="font-serif text-lg font-light text-[#1A1A1A] mb-1">{product.name}</h3>
+          <h3 className="font-serif text-lg font-light text-[#2A2A2A] mb-1">{product.name}</h3>
           <p className="text-sm text-muted">${product.price.toLocaleString()}</p>
         </div>
       </Link>

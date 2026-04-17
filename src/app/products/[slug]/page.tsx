@@ -21,13 +21,13 @@ export default async function ProductPage({
     <div className="pt-16">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex items-center gap-3 mb-12">
-          <Link href="/shop" className="text-xs tracking-[0.12em] uppercase text-muted hover:text-[#1A1A1A] transition-colors">
+          <Link href="/shop" className="text-xs tracking-[0.12em] uppercase text-muted hover:text-[#2A2A2A] transition-colors">
             Shop
           </Link>
           <span className="text-muted text-xs">/</span>
           <span className="text-xs tracking-[0.12em] uppercase text-muted capitalize">{product.category}</span>
           <span className="text-muted text-xs">/</span>
-          <span className="text-xs tracking-[0.12em] uppercase text-[#1A1A1A]">{product.name}</span>
+          <span className="text-xs tracking-[0.12em] uppercase text-[#2A2A2A]">{product.name}</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -44,8 +44,8 @@ export default async function ProductPage({
 
           <div className="flex flex-col justify-center">
             <p className="text-xs tracking-[0.15em] uppercase text-muted mb-3">{product.category}</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-light text-[#1A1A1A] mb-4">{product.name}</h1>
-            <p className="text-2xl font-light text-[#1A1A1A] mb-8">${product.price.toLocaleString()}</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-light text-[#2A2A2A] mb-4">{product.name}</h1>
+            <p className="text-2xl font-light text-[#2A2A2A] mb-8">${product.price.toLocaleString()}</p>
 
             <div className="w-12 h-px bg-border mb-8" />
 
@@ -55,10 +55,10 @@ export default async function ProductPage({
             <div className="flex flex-col gap-3">
               <RequestButton productName={product.name} />
               <Link
-                href="/contact"
-                className="w-full py-3.5 border border-border text-[#1A1A1A] text-xs tracking-[0.15em] uppercase text-center hover:border-[#1A1A1A] transition-colors duration-300"
+                href={`/contact?type=inquiry&piece=${encodeURIComponent(product.name)}`}
+                className="w-full py-3.5 border border-border text-[#2A2A2A] text-xs tracking-[0.15em] uppercase text-center hover:border-[#2A2A2A] transition-colors duration-300"
               >
-                Ask Annie about this piece
+                Ask Annie
               </Link>
             </div>
           </div>

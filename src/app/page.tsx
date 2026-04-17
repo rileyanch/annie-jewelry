@@ -2,9 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import ProductCard from "@/components/ui/ProductCard";
 import CategoryCard from "@/components/ui/CategoryCard";
 import EmailCapture from "@/components/ui/EmailCapture";
+import ScrollPopup from "@/components/ui/ScrollPopup";
 import { products, categories } from "@/data/products";
 
 const featuredProducts = products.filter((p) => p.featured);
@@ -15,22 +17,26 @@ const valueProps = [
     description: "Every piece is hand-selected by Annie — never algorithmic, never random.",
   },
   {
-    title: "Insider Pricing",
-    description: "Access to wholesale and trade pricing not available to the general public.",
+    title: "Access to Insider Pricing",
+    description: "Trade relationships built over years bring you pricing you won't find at retail.",
   },
   {
     title: "Trusted Guidance",
-    description: "Annie's recommendations come from years of expertise and genuine care.",
+    description: "Annie's recommendations come from genuine expertise and real care — not commission.",
   },
   {
     title: "A Personal Experience",
-    description: "Not a marketplace. A relationship. Annie shops for you like a trusted friend.",
+    description: "This is not a marketplace. It's a relationship. Annie shops for you like a trusted friend.",
   },
 ];
 
 export default function Home() {
+  const whyAnnieRef = useRef<HTMLElement>(null);
+
   return (
     <div className="pt-16">
+      <ScrollPopup triggerRef={whyAnnieRef} />
+
       {/* Hero */}
       <section className="relative h-[90vh] min-h-[600px] flex items-center">
         <div className="absolute inset-0">
@@ -41,7 +47,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/35" />
         </div>
         <div className="relative max-w-6xl mx-auto px-6 w-full">
           <motion.div
@@ -51,23 +57,23 @@ export default function Home() {
             className="max-w-xl"
           >
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-6">
-              Timeless pieces,<br />thoughtfully chosen.
+              Thoughtfully selected.<br />Priced with access.
             </h1>
             <p className="text-white/80 text-lg font-light mb-10 tracking-wide">
-              Curated jewelry at insider pricing.
+              A curated collection of fine jewelry, chosen by Annie.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/shop"
-                className="px-8 py-3.5 bg-white text-[#1A1A1A] text-xs tracking-[0.15em] uppercase hover:bg-accent hover:text-white transition-colors duration-300"
+                className="px-8 py-3.5 bg-[#C6A77B] text-white text-xs tracking-[0.15em] uppercase hover:bg-[#A8865A] transition-colors duration-300"
               >
-                Shop Collection
+                Shop
               </Link>
               <Link
-                href="/shop"
-                className="px-8 py-3.5 border border-white text-white text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-[#1A1A1A] transition-colors duration-300"
+                href="/collections"
+                className="px-8 py-3.5 border border-white text-white text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-[#F8F6F2] transition-colors duration-300"
               >
-                Browse by Category
+                Collections
               </Link>
             </div>
           </motion.div>
@@ -84,7 +90,7 @@ export default function Home() {
           className="text-center mb-14"
         >
           <p className="text-xs tracking-[0.2em] uppercase text-muted mb-3">Browse</p>
-          <h2 className="font-serif text-3xl md:text-4xl font-light">By Category</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-light">Shop by Category</h2>
         </motion.div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
           {categories.map((cat, i) => (
@@ -101,8 +107,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Props */}
-      <section className="bg-surface py-24">
+      {/* Why Annie */}
+      <section ref={whyAnnieRef} className="bg-surface py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -148,7 +154,7 @@ export default function Home() {
           </div>
           <Link
             href="/shop"
-            className="text-xs tracking-[0.15em] uppercase text-muted hover:text-[#1A1A1A] transition-colors pb-0.5 border-b border-muted hover:border-[#1A1A1A]"
+            className="text-xs tracking-[0.15em] uppercase text-muted hover:text-[#2A2A2A] transition-colors pb-0.5 border-b border-muted hover:border-[#2A2A2A]"
           >
             View all
           </Link>
